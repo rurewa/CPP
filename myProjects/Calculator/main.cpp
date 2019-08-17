@@ -1,4 +1,4 @@
-// Программа Калькулятор v 1.2
+// Программа Калькулятор v 1.3
 #include<iostream>
 using namespace std;
 
@@ -14,14 +14,10 @@ int main() {
   cin >> firstNum;
   cout << "Введите символ операции" << endl;
   cin >> op;
-  if ((op != '+') && (op != '-') && (op != '*') && (op != '/')) {
-    cout << "Введите правильный оператор! +, -, *, /" << endl;
-    return main();
-  }
-  else {
+
+  if ((op == '+') || (op == '-') || (op == '*') || (op == '/')) {
     cout << "Введите второе число" << endl;
     cin >> secondNum;
-
     switch (op)
     {
       case '*':
@@ -76,7 +72,10 @@ int main() {
         cout << "Введите символ операции" << endl;
       break;
     }
-}
-
+  }
+  else {
+    cout << "Введите правильный оператор! +, -, *, /" << endl;
+    return main();
+  }
   return 0;
 }
