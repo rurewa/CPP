@@ -1,31 +1,30 @@
-// Программа Калькулятор v 1.3
+// Программа Калькулятор v 1.4
 #include<iostream>
 using namespace std;
 
-int firstNum = 0;
-int secondNum = 0;
-char op = 0;
-int result = 0;
-int var = 0;
-
 int main() {
+  char op = 0;
+  int result = 0;
+  char var = 0;
   cout << "Программа Калькулятор!" << endl;
   cout << "Введите первое число" << endl;
+  int firstNum = 0;
   cin >> firstNum;
   cout << "Введите символ операции" << endl;
   cin >> op;
 
   if ((op == '+') || (op == '-') || (op == '*') || (op == '/')) {
     cout << "Введите второе число" << endl;
+    int secondNum = 0;
     cin >> secondNum;
     switch (op)
     {
       case '*':
         result = firstNum * secondNum;
         cout << "Результат: " << result << endl;
-        cout << "Нажмите 1 для продолжения, 0 для выхода" << endl;
+        cout << "Нажмите y для продолжения, n для выхода" << endl;
         cin >> var;
-        if (var == 1) {
+        if (var == 'y') {
           return main();
         }
         else {
@@ -35,9 +34,9 @@ int main() {
       case '/':
         result = firstNum / secondNum;
         cout << "Результат: " << result << endl;
-        cout << "Нажмите 1 для продолжения, 0 для выхода" << endl;
+        cout << "Нажмите y для продолжения, n для выхода" << endl;
         cin >> var;
-        if (var == 1) {
+        if (var == 'y') {
           return main();
         }
         else {
@@ -47,9 +46,9 @@ int main() {
       case '+':
         result = firstNum + secondNum;
         cout << "Результат: " << result << endl;
-        cout << "Нажмите 1 для продолжения, 0 для выхода" << endl;
+        cout << "Нажмите y для продолжения, n для выхода" << endl;
         cin >> var;
-        if (var == 1) {
+        if (var == 'y') {
           return main();
         }
         else {
@@ -59,9 +58,9 @@ int main() {
       case '-':
         result = firstNum - secondNum;
         cout << "Результат: " << result << endl;
-        cout << "Нажмите 1 для продолжения, 0 для выхода" << endl;
+        cout << "Нажмите y для продолжения, n для выхода" << endl;
         cin >> var;
-        if (var == 1) {
+        if (var == 'y') {
           return main();
         }
         else {
