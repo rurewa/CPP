@@ -1,4 +1,5 @@
-// Программа Калькулятор v 0.4
+// Простой Калькулятор v 0.4
+// The Simply Calculator
 #include<iostream>
 using namespace std;
 
