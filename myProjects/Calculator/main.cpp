@@ -1,4 +1,4 @@
-// Программа Калькулятор v 1.4
+// Программа Калькулятор v 0.4
 #include<iostream>
 using namespace std;
 
