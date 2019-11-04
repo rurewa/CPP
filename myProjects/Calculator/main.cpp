@@ -20,19 +20,19 @@ int main() {
       {
         case '*':
           cout << "Результат: " << firstNum * secondNum << endl;
-        break;
+          break;
         case '/':
           cout << "Результат: " << firstNum / secondNum << endl;
-        break;
+          break;
         case '+':
           cout << "Результат: " << firstNum + secondNum << endl;
-        break;
+          break;
         case '-':
           cout << "Результат: " << firstNum - secondNum << endl;
-        break;
+          break;
         default:
           cout << "Введите символ операции" << endl;
-        break;
+          break;
       }
     }
     else {
