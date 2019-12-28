@@ -4,10 +4,9 @@
 using namespace std;
 
 // Генерация случайного числа
-int randNums1() {
+int randNums1(int result = 0) {
   srand(time(0));
-  int result = 1 + (rand() % 10);
-  return result;
+  return result = 1 + (rand() % 10);
 }
 // Генерация псевдослучайного числа
 int randNums2(int min = 1, int max = 10) {
