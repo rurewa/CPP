@@ -15,7 +15,7 @@ int randNums2(int min = 1, int max = 10) {
 
 int main() {
   cout.setf(ios::boolalpha); // Для вывода слов true/false
-  char userSelection = 'y';
+  char userSelection = 'y'; // Для продолжения или выхода из программы
   int num = 0; // Для ввода ответа пользователем
   int check = 0; // Для сравнения
   bool answer = false; // Для вывода результата
@@ -31,8 +31,15 @@ int main() {
     else {
       cout << answer << endl;
     }
-    cout << "Press (y) to replay or (n) key to exit" << endl;
+    cout << "Press (y) to replay or any other key to exit" << endl;
     cin >> userSelection;
+    // Проверка корректности ввода символа
+    if (userSelection == 'y') {
+      return main();
+    }
+    else {
+      return 0;
+    }
   }
 
   return 0;
