@@ -25,22 +25,28 @@ int main() {
     cout << randNums1() << " x " << randNums2() << " ? " << endl;
     check = randNums1() * randNums2();
     cin >> num;
-    if (num == check) {
+    if (cin.fail()) { // Проверка ввода числа
+         cin.clear(); // Сброс состояния
+         cout << "Insert the number!" << endl;
+         break;
+    }
+    else {
+      if (num == check) {
       cout << !answer << endl;
-    }
-    else {
+      }
+      else {
       cout << answer << endl;
-    }
-    cout << "Press (y) to replay or any other key to exit" << endl;
-    cin >> userSelection;
-    // Проверка корректности ввода символа
-    if (userSelection == 'y') {
-      return main();
-    }
-    else {
-      return 0;
+      }
+        cout << "Press (y) to replay or any other key to exit" << endl;
+        cin >> userSelection;
+        // Проверка корректности ввода символа
+        if (userSelection == 'y') {
+          return main();
+        }
+        else {
+          break;
+        }
     }
   }
-
   return 0;
 }
