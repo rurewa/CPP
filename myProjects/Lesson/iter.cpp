@@ -8,7 +8,7 @@ int foo(int a, int b)
   int result = 1, i;
   for (i = 0; i < b; ++i)
     {
-      result *= a;
+      result *= a
     }
   return result;
 }
@@ -18,4 +18,6 @@ int main()
   z = foo(x, y);
 
   cout << z << endl;
+
+  return 0;
 }
