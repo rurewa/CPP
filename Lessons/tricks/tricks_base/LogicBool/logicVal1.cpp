@@ -32,6 +32,9 @@ int main() {
     result = (a == b) xor (a != b); // ТОЛЬКО ОДИН
     cout << "(a == b) xor (a != b) " << result << endl;
 
+    result = !(a == b) xor (a != b); // ТОЛЬКО ОДИН
+    cout << "!(a == b) xor (a != b) " << result << endl;
+
     return 0;
 }
 
