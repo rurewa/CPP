@@ -3,7 +3,7 @@ using namespace std;
 
 int main() 
 {
-	char again = 'y';
+    char again = 'y';
     while (again == 'y') {
         cout << "**Вы отлично поиграли!**" << endl;;
         cout << "\n:Желаете продолжить? (y/n)" << endl;
