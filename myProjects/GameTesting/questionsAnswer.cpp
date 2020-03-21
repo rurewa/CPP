@@ -1,7 +1,10 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+// Простой Калькулятор v 0.6. The Simply Calculator
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
+#include"counts.h"
 using namespace std;
-
-int digitCount = 0;
+using namespace myCounts;
 
 void foo();
 
@@ -45,3 +48,6 @@ void foo() {
     cout << check << endl;
   }
 }
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+// END FILE
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
