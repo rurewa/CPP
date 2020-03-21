@@ -46,7 +46,7 @@ int main() {
         cin >> userSelection;
         // Проверка корректности ввода символа
         if (userSelection == 'y') {
-          return main();
+          continue;
         }
         else {
           break;
