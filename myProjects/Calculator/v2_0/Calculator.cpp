@@ -1,18 +1,18 @@
-// Простой Калькулятор v 0.6
+// Простой Калькулятор v 2.0
 // The Simply Calculator
 #include<iostream>
 using namespace std;
 
 int getUserInput();
 int getMatematicalOperation();
-int calculateResult(int x, int op, int y);
+int calculateResult(int x, char op, int y);
 void printResult(int result);
 
 int main() {
   char userSelection = 'y';
   do {
     int input1 = getUserInput();
-    int op = getMatematicalOperation();
+    char op = getMatematicalOperation();
     int input2 = getUserInput();
     int result = calculateResult(input1, op, input2);
     printResult(result);

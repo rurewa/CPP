@@ -2,7 +2,7 @@
 using namespace std;
 
 // Вычисляем полученные значения
-int calculateResult(int x, int op, int y) {
+int calculateResult(int x, char op, int y) {
   if (op == '+') { return x + y; }
   if (op == '-') { return x - y; }
   if (op == '*') { return x * y; }

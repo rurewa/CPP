@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 // Принимаем первое значение от пользователя
 int getUserInput() {
   cout << "Please enter an integer: " << endl;
