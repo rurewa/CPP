@@ -1,6 +1,6 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Программа для запоминания английских слов. С применением динамических массивов
-// V 2.0 beta refactoring
+// V 2.1 beta refactoring
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
 #include <string>
@@ -9,29 +9,27 @@
 using namespace std;
 
 // Генерация случайного числа
-int randNums1(int lenRand_1);
-  
+int randNums1(int lenRand_1);  
 int userChooseGame(); // Выбор игры
-
-void menuGame();
+void menuGame(); // Меню
 
 int main()
 {
     vector<string> enIrregularVerbsWords = {"meet", "let", "ride", "hold", "hear", "have", "grow", "give", "get", "fight", "fall",
-                                            "cost", "come", "choose", "catch", "bring", "blow", "wear", "wake"};
+                                            "cost", "come", "choose", "catch", "bring", "blow", "wear", "wake", "until", "everyone!"};
     vector<string> ruIrregularVerbsWords = {"встречаться", "означать", "кататься", "держать", "слышать", "иметь", "расти", "давать",
                                             "получать", "бороться", "падать", "строить", "придти", "выбирать", "ловить", "приносить", 
-                                            "дуть", "носить", "будить"};
+                                            "дуть", "носить", "будить", "до тех пор", "все"};
     vector<string> ruQuestionsWord = {"что", "почему", "где", "как", "когда", "чей"};
     vector<string> enQuestionsWord = {"what", "why", "where", "how", "when", "whose"};
-    menuGame();
-    int userChoose = userChooseGame();
+    menuGame(); // Меню
+    int userChoose = userChooseGame(); // Выбор игры
     string userInWord;       // Для ввода слова от пользователя
     char again = 'y'; // Для продолжения/завершения программы
     switch (userChoose) {
     case 1:
         do {
-            int numArray = randNums1(constants::lengRandVerb);
+            int numArray = randNums1(constants::LENG_RAND_VERB);
             cout << "Translate the word - " << ruIrregularVerbsWords[numArray] << endl;
             cin >> userInWord;
             if (enIrregularVerbsWords[numArray] == userInWord) {
@@ -46,7 +44,7 @@ int main()
         break;
     case 2:
         do {
-            int numArray = randNums1(constants::lengRandQwest);
+            int numArray = randNums1(constants::LENG_RAND_QWEST);
             cout << "Translate the word - " << ruQuestionsWord[numArray] << endl;
             cin >> userInWord;
             if (enQuestionsWord[numArray] == userInWord) {
@@ -59,13 +57,23 @@ int main()
             cin >> again;
         } while (again == 'y');
         break;
-
+    case 3:
+       cout << "Goodbye!" << endl;
+       return 0;
+       break;
     default:
         return main();
         break;
     }
-    cout << "Goodbye!" << endl;
-
+    cout << "Do you want main menu? (y/n)" << endl;
+    char mainMenu;
+    cin >> mainMenu;
+    if (mainMenu == 'y') {
+        return main();
+    }
+    else {
+      cout << "Goodbye!" << endl;
+    }
     return 0;
 }
 
@@ -79,6 +87,7 @@ void menuGame() {
   cout << "Выберите задание (1/2)" << endl;
   cout << "1. IrregularVerb;" << endl;
   cout << "2. QuestionsWord." << endl;
+  cout << "3. Exit" << endl;
 }
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- //
 // END FILE
