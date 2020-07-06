@@ -14,6 +14,44 @@ enum MonsterType {
 };
 
 void printMonster(MonsterType typeName) {
+  switch (typeName)
+  {
+  case 0:
+    cout << "Ogre" << endl;
+    break;
+  case 1:
+    cout << "Goblin" << endl;
+    break;  
+  case 2:
+    cout << "Skeleton" << endl;
+    break;
+  case 3:
+    cout << "Orc" << endl;
+    break;
+  case 4:
+    cout << "Troll" << endl;
+    break;    
+  default:
+    cout << "Unknown!" << endl;
+    break;
+  }
+}
+
+int main() {
+  cout << "Enter num monster type: ";
+  int numMonsterType;
+  cin >> numMonsterType;
+  cin.ignore(32767, '\n'); // Очистка ввода от знака переносат строки
+  // Явное преобразование в int через static_cast
+  printMonster(static_cast<MonsterType>(numMonsterType));
+
+  return 0;
+}
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+// END FILE
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+/* 
+void printMonster(MonsterType typeName) {
   if (typeName == MONSTER_OGRE) {
     cout << "Ogre" << endl;
   }
@@ -32,18 +70,5 @@ void printMonster(MonsterType typeName) {
   else {
     cout << "Unknown!" << endl;
   }
-}
-
-int main() {
-  cout << "Enter num monster type: ";
-  int numMonsterType;
-  cin >> numMonsterType;
-  cin.ignore(32767, '\n'); // Очистка ввода от знака переносат строки
-  // Явное преобразование в int через static_cast
-  printMonster(static_cast<MonsterType>(numMonsterType));
-
-  return 0;
-}
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
-// END FILE
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+  }
+  */
