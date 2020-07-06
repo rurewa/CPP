@@ -30,7 +30,7 @@ void printMonster(MonsterType typeName) {
     cout << "Troll" << endl;
   }
   else {
-    cout << "Unknown!";
+    cout << "Unknown!" << endl;
   }
 }
 
