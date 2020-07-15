@@ -1,7 +1,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Варианты по void для доступа к элементам перечислений enum по выбору
 // пользователя
-// V 1.0
+// V 1.1
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
 
@@ -47,12 +47,17 @@ void printColor(Colors color) {
     }
 }
 
-int main() {
+int userInput() {
     using namespace std;
     cout << "Enter num: " << endl;
     int userNum;
     cin >> userNum;
-    Colors color(static_cast<Colors>(userNum));
+    return userNum;
+}
+
+int main() {
+    int userInputNum = userInput();
+    Colors color(static_cast<Colors>(userInputNum));
     printColor(color);
 
     return 0;
