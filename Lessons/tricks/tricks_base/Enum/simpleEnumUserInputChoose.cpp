@@ -1,9 +1,8 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Варианты доступа к элементам перечислений enum по выбору пользователя
-// V 1.0
+// V 1.1
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
-using namespace std;
 
 enum Colors {
     YELLOW,
@@ -13,23 +12,21 @@ enum Colors {
 };
 
 int main() {
+    using namespace std;
     cout << "Enter num: " << endl;
     int userNum;
     cin >> userNum;
-    Colors colorYellow(static_cast<Colors>(userNum));
-    Colors colorWhite(static_cast<Colors>(userNum));
-    Colors colorOrange(static_cast<Colors>(userNum));
-    Colors colorGreen(static_cast<Colors>(userNum));
-    if (colorYellow == YELLOW) {
+    Colors color(static_cast<Colors>(userNum));
+    if (color == YELLOW) {
         cout << "White" << endl;
     }
-    else if (colorWhite == WHITE) {
+    else if (color == WHITE) {
         cout << "Yellow" << endl;
     }
-    else if (colorOrange == ORANGE) {
+    else if (color == ORANGE) {
         cout << "Orange" << endl;
     }
-    else if (colorGreen == GREEN) {
+    else if (color == GREEN) {
         cout << "Green" << endl;
     }
     else {
