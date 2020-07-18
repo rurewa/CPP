@@ -1,12 +1,24 @@
 #include<iostream>
-using namespace std;
 
 // Вычисляем полученные значения
 int calculateResult(int x, char op, int y) {
-  if (op == '+') { return x + y; }
-  if (op == '-') { return x - y; }
-  if (op == '*') { return x * y; }
-  if (op == '/') { return x / y; } 
-
-  return -1; // Если пользователь ввёл неправильный знак
+    switch (op)
+    {
+    case '+':
+      return x + y;
+      break;
+    case '-':
+      return x - y;
+      break;
+    case '*':
+      return x * y;
+      break;
+    case '/':
+      return x / y;
+      break;
+    default:
+      std::cout << "Error operator!" << std::endl;
+      return -1;
+      break;
+    }
 }

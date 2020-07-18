@@ -1,10 +1,9 @@
 #include<iostream>
-using namespace std;
 
-// Принимаем первое значение от пользователя
+// Принимаем значение от пользователя
 int getUserInput() {
-  cout << "Please enter an integer: " << endl;
-  int value = 0;
-  cin >> value;
-  return value;
+    std::cout << "Please enter an integer: " << std::endl;
+    int value = 0;
+    std::cin >> value;
+    return value;
 }
