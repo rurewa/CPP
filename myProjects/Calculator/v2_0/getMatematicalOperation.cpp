@@ -1,7 +1,7 @@
 #include<iostream>
 
 // Принимаем знак оператора от пользователя
-int getMatematicalOperation() {
+char getMatematicalOperation() {
     std::cout << "Please enter which operator: " << std::endl;
     char op;
     std::cin >> op;

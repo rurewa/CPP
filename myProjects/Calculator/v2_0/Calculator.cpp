@@ -1,21 +1,21 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
-// Простой Калькулятор v 2.1
+// Простой Калькулятор v 2.2
 // The Simply Calculator
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
 
-int getUserInput();
-int getMatematicalOperation();
-int calculateResult(int x, char op, int y);
-void printResult(int result);
+double getUserInput();
+char getMatematicalOperation();
+double calculateResult(double x, char op, double y);
+void printResult(double result);
 
 int main() {
     char userSelection = 'y';
     do {
-      int input1 = getUserInput();
+      double input1 = getUserInput();
       char op = getMatematicalOperation();
-      int input2 = getUserInput();
-      int result = calculateResult(input1, op, input2);
+      double input2 = getUserInput();
+      double result = calculateResult(input1, op, input2);
       printResult(result);
       std::cout << "Do you want to play again? (y/n)" << std::endl;
       std::cin >> userSelection;

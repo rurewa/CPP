@@ -1,9 +1,9 @@
 #include<iostream>
 
 // Принимаем значение от пользователя
-int getUserInput() {
+double getUserInput() {
     std::cout << "Please enter an integer: " << std::endl;
-    int value = 0;
+    double value = 0;
     std::cin >> value;
     return value;
 }

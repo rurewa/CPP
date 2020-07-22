@@ -1,7 +1,7 @@
 #include<iostream>
 
 // Вычисляем полученные значения
-int calculateResult(int x, char op, int y) {
+double calculateResult(double x, char op, double y) {
     switch (op)
     {
     case '+':
