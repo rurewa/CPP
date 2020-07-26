@@ -1,13 +1,9 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
-// Простой Калькулятор v 2.3
+// Простой Калькулятор v 2.4
 // The Simply Calculator
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
-
-double getUserInput();
-char getMatematicalOperation();
-double calculateResult(double x, char op, double y);
-void printResult(double result);
+#include "function.h"
 
 int main() {
     char userSelection = 'y';
