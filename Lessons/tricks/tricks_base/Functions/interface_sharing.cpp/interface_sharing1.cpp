@@ -32,7 +32,7 @@ bool isEqual(int a, int b) {
 }
 
 int userInput() { // 1-е значение от пользователя
-    int x;
+    int x{};
     std::cin >> x;
     return x;
 }
