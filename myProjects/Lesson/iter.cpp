@@ -1,23 +1,25 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+// Пример чистой функции.
+// V 1.0
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
-using namespace std;
 
-int x = 2, y = 5, z;
+const int x{2}, y{5};
 
-int foo(int a, int b)
-{
-  int result = 1, i;
-  for (i = 0; i < b; ++i)
-    {
-      result *= a
+int foo(int a, int b) {
+    int result{1}, i{};
+    for (i = 0; i < b; ++i) {
+        result *= a;
     }
-  return result;
+    return result;
 }
 
-int main()
-{
-  z = foo(x, y);
+int main() {
+    int z = foo(x, y);
+    std::cout << z << std::endl;
 
-  cout << z << endl;
-
-  return 0;
+    return 0;
 }
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
+// END FILE
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
