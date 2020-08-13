@@ -1,7 +1,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Простая программа для запоминания таблицы умножения.
 // Simple program for storing multiplication tables.
-// V 2.0 beta refactoring
+// V 2.1 beta refactoring
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
 #include "functions.h"
@@ -13,9 +13,11 @@ int main() {
     int num = 0; // Для ввода ответа пользователем
     int check = 0; // Для сравнения
     const bool answer = false; // Для вывода результата
-
+    short allTry = 0; // Подсчёт попыток
+    short allFalse = 0;
     cout << "Testing knowledge of the multiplication table" << endl;
     while (userSelection != 'n') {
+        ++allTry;
         cout << randNums1() << " x " << randNums2() << " ? " << endl;
         check = randNums1() * randNums2(); // Вычисление
         cin >> num;
@@ -24,20 +26,23 @@ int main() {
             cout << "Insert the number!" << endl;
             break;
         }
-    else {
-        if (num == check) {
-            cout << !answer << endl;
-        }
         else {
-            cout << answer << endl;
-        }
-        cout << "Press (y) to replay or any other key to exit" << endl;
-        cin >> userSelection;
-        // Проверка корректности ввода символа
-        if (userSelection == 'y') { continue; }
-        else { break; }
+            if (num == check) {
+                cout << !answer << endl;
+            }
+            else {
+                cout << answer << endl;
+                ++allFalse;
+            }
+            cout << "Press (y) to replay or any other key to exit" << endl;
+            cin >> userSelection;
+            // Проверка корректности ввода символа
+            if (userSelection == 'y') { continue; }
+            else { break; }
         }
     }
+    cout << "Попыток: " << allTry << " из них неудач: " << allFalse << endl;
+    return 0;
 }
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-//
 // END FILE
