@@ -1,7 +1,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Простая программа для запоминания таблицы умножения.
 // Simple program for storing multiplication tables.
-// V 2.1 beta refactoring
+// V 2.2 beta refactoring
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
 #include "functions.h"
@@ -10,16 +10,15 @@ int main() {
     using namespace std;
     cout.setf(ios::boolalpha); // Для выода слов true/false
     char userSelection{'y'}; // Для продолжения или выхода из программы
-    int num{}; // Для ввода ответа пользователем
-    int check{}; // Для сравнения
-    const bool answer{false}; // Для вывода результата
     float allTry{}; // Подсчёт попыток
     float allFalse{}; // Подсчёт неудач
     cout << "Testing knowledge of the multiplication table" << endl;
     while (userSelection != 'n') {
         ++allTry;
         cout << randNums1() << " x " << randNums2() << " ? " << endl;
+        int check{}; // Для сравнения
         check = randNums1() * randNums2(); // Вычисление
+        int num{}; // Для ввода ответа пользователем
         cin >> num;
         if (cin.fail()) { // Проверка ввода числа
             cin.clear(); // Сброс состояния
@@ -27,6 +26,7 @@ int main() {
             break;
         }
         else {
+            const bool answer{false}; // Для вывода результата
             if (num == check) {
                 cout << !answer << endl;
             }
