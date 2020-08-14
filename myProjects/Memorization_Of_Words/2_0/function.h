@@ -2,7 +2,7 @@
 #define FUNCTION_H
 
 // Генерация случайного числа
-int randNums1(int lenRand_1);
+int randNums(int lenRand);
 int userChooseGame(); // Выбор игры
 void menuGame(); // Меню
 

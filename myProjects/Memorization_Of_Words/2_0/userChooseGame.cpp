@@ -1,7 +1,7 @@
 #include <iostream>
 
 int userChooseGame() {
-    int userChoose = 0; // Выбор игр
+    int userChoose{}; // Выбор игры
     std::cin >> userChoose;
     return userChoose;
 }
