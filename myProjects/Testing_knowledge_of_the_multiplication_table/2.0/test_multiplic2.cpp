@@ -10,11 +10,11 @@ int main() {
     using namespace std;
     cout.setf(ios::boolalpha); // Для выода слов true/false
     char userSelection{'y'}; // Для продолжения или выхода из программы
-    int num = 0; // Для ввода ответа пользователем
-    int check = 0; // Для сравнения
-    const bool answer = false; // Для вывода результата
-    short allTry = 0; // Подсчёт попыток
-    short allFalse = 0;
+    int num{}; // Для ввода ответа пользователем
+    int check{}; // Для сравнения
+    const bool answer{false}; // Для вывода результата
+    float allTry{}; // Подсчёт попыток
+    float allFalse{}; // Подсчёт неудач
     cout << "Testing knowledge of the multiplication table" << endl;
     while (userSelection != 'n') {
         ++allTry;
@@ -41,7 +41,7 @@ int main() {
             else { break; }
         }
     }
-    cout << "Попыток: " << allTry << " из них неудач: " << allFalse << endl;
+    computation(allTry, allFalse);
     return 0;
 }
 //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-//
