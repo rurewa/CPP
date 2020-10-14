@@ -1,14 +1,14 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Простая программа для запоминания таблицы умножения.
 // Simple program for storing multiplication tables.
-// V 2.2 beta refactoring
+// V 2.3 beta refactoring
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include<iostream>
 #include "functions.h"
 
 int main() {
     using namespace std;
-    cout.setf(ios::boolalpha); // Для выода слов true/false
+    cout.setf(ios::boolalpha); // Для вывода слов true/false
     char userSelection{'y'}; // Для продолжения или выхода из программы
     float allTry{}; // Подсчёт попыток
     float allFalse{}; // Подсчёт неудач
