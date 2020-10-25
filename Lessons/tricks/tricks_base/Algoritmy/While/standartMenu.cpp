@@ -1,38 +1,37 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- //
+// Пример цикла с выбором
+// V 1.0
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- //
 #include <iostream>
-using namespace std;
 
-int main() 
-{
+int main() {
+    using namespace std;
     char again = 'y';
-	
     while (again == 'y') {
-      cout << "Стандартное меню\n\n";
-	  cout << "1 - Пункт\n";
-	  cout << "2 - Пункт\n";
-	  cout << "3 - Пункт\n\n";  
-      int choice; // Выбор пункта меню
-	  cout << "Выбрайте:  ";
-      cin >> choice;
-
-	  switch (choice)
-	  {
-		case 1:	
-			cout << "Вы выбрали 1-й пункт.\n";
-			break;
-		case 2:	
-			cout << "Вы выбрали 2-й пункт.\n";
-			break;
-		case 3:	
-			cout << "Вы выбрали 3-й пункт.\n";
-			break;
-		default:
-			cout << "Вы выбрали неправильный пункт.\n";
-	  }
-      cout << "Хотите продолжить? (y/n)" << endl;
-      cin >> again;
-    }	
-
-    cout << "До свидания!" << endl;
-
+        cout << "Chose menu 1, 2 or 3" << endl;
+        cout << "Menu one: " << endl;
+        cout << "Menu two: " << endl;
+        cout << "Menu three: " << endl;
+        int userMenu = 0;
+        cin >> userMenu;
+        switch (userMenu)
+        {
+        case 1:
+            cout << "You chose one" << endl;
+            break;
+        case 2:
+            cout << "You chose two" << endl;
+            break;
+        case 3:
+            cout << "You chose three" << endl;
+            break;
+        default:
+            cout << "You have not chosen anything" << endl;
+            break;
+        }
+        cout << "Do you want to continue (y/n)?: " << endl;
+        cin >> again;
+    }
+    cout << "Goodbay!" << endl;
     return 0;
 }
