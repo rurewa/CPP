@@ -3,9 +3,9 @@
 // V 1.0
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
-using namespace std;
 
 int main() {
+    using namespace std;
     cout << "Enter an integer:" << endl;
     int a;
     cin >> a;
