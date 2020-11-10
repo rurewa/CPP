@@ -1,11 +1,10 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Программа для запоминания английских слов. С применением динамических массивов
-// V 2.3 beta refactoring
+// V 2.4 beta refactoring
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
 #include <string>
 #include <vector>
-#include "constants.h" // Константы
 #include "function.h" // Функции
 
 int main()
@@ -27,7 +26,8 @@ int main()
     switch (userChoose) {
     case 1:
         do {
-            int numArray = randNums(constants::LENG_RAND_VERB);
+            int arrEnIrregularVerbsWordsSize = enIrregularVerbsWords.size(); // Определяем кол-во элементов массива
+            int numArray = randNums(arrEnIrregularVerbsWordsSize);
             cout << "Translate the word - " << ruIrregularVerbsWords[numArray] << endl;
             cin >> userInWord;
             if (enIrregularVerbsWords[numArray] == userInWord) {
@@ -42,7 +42,8 @@ int main()
         break;
     case 2:
         do {
-            int numArray = randNums(constants::LENG_RAND_QWEST);
+            int arrEnQuestionsWordSize = enQuestionsWord.size();
+            int numArray = randNums(arrEnQuestionsWordSize);
             cout << "Translate the word - " << ruQuestionsWord[numArray] << endl;
             cin >> userInWord;
             if (enQuestionsWord[numArray] == userInWord) {
@@ -57,7 +58,8 @@ int main()
         break;
     case 3:
        do {
-            int numArray = randNums(constants::LENG_RAND_PROGRAMMIC);
+            int arrEnProgrammicWorldsSize = enProgrammicWorlds.size();
+            int numArray = randNums(arrEnProgrammicWorldsSize);
             cout << "Translate the word - " << ruProgrammicWorlds[numArray] << endl;
             cin >> userInWord;
             if (enProgrammicWorlds[numArray] == userInWord) {
