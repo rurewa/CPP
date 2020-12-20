@@ -7,7 +7,7 @@
 
 int main() {
     using namespace std;
-    static int emploeeCode = 10;
+    int emploeeCode = 10;
     while (emploeeCode != 0) {
         --emploeeCode;
         cout << emploeeCode << endl;
