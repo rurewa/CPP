@@ -35,9 +35,17 @@ int main() {
         if (currentNum != lastNum) { // Сравнивает новое число с предыдущим
             ++counter; // Если уникальное, то счётчик прирастает
             arr[counter] = currentNum; // Записывает в массив по индексу из счётчика
-            // Показывает новое содержимое массива
+            // Показывает новое содержимое массива и проверяет его на заполненность
             for (int arrIndex = 0; arrIndex <= 9; ++arrIndex) {
                 cout << " : " << arr[arrIndex];
+                int result = arr[9];
+                if (result != 0) {
+                    for (int a = 1; a <= 9; ++a) {
+                        cout << " : " << arr[a];
+                    }
+                    cout << " " << endl;
+                    return 0;
+                }
             }
         }
         else {
