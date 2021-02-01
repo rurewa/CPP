@@ -4,6 +4,7 @@
 // Следующее за первым число сравнимается с первым и, если нет повтора, то оно заносится в
 // фиксированный массив в следующий индекс и так до n-количество раз.
 // Если обнаружен повтор, то программа его игнорирует и возвращается к генерации числа.
+// В программе ещё куча отладночной ин-фы.
 // V 1.0
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
@@ -21,17 +22,17 @@ int main() {
     cout << "Empty array: " << endl;
     int arr[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (int arrIndex = 0; arrIndex <= 9; ++arrIndex) {
-        cout << " Index arr: " << arr[arrIndex];
+        cout << " : " << arr[arrIndex];
     }
-    cout << "*" << endl;
+    cout << " " << endl;
     cout << "/---------------------------------------------------------------------/" << endl;
     // Новое состояние массива
     unsigned int counter = -1; // Счётчик уникальных чисел
     int currentNum = 0; // Текущее число
     int lastNum = 0; // предыдущее число
     while (counter > 0 || counter <= 10) {
-        cout << ". Enter you num: " << endl;
-        cin >> currentNum; // Введённое число
+        int randNum = getRandomNumber(1, 10);
+        currentNum = randNum;
         if (currentNum != lastNum) { // Сравнивает новое число с предыдущим
             ++counter; // Если уникальное, то счётчик прирастает
             arr[counter] = currentNum; // Записывает в массив по индексу из счётчика
@@ -42,6 +43,7 @@ int main() {
                 if (result != 0) {
                     for (int a = 1; a <= 9; ++a) {
                         cout << " : " << arr[a];
+                        cout << " " << endl;
                     }
                     cout << " " << endl;
                     return 0;
@@ -49,13 +51,10 @@ int main() {
             }
         }
         else {
-            cout << "\nRepeat!";
+            cout << "\nRepeat! " << currentNum;
         }
-        int arrSize = sizeof(arr) / sizeof(arr[0]); // Определение текущего размера массива
-        cout << ". Size array: " << arrSize << endl;
         lastNum = currentNum;
     }
-
     return 0;
 }
 
@@ -67,37 +66,10 @@ int getRandomNumber(int min, int max)
     // Равномерно распределяем рандомное число в нашем диапазоне
     return static_cast<int>(rand() * fraction * (max - min + 1) + min);
 }
+
 /*
-int lastNum = 0; // Предыдущее число
-        if (currentNum != lastNum) {
-            ++counter;
-            arr[counter] = currentNum;
-        }
-        else {
-            cout << "Repeat!" << endl;
-            lastNum = currentNum;
-        }
-while (true) {
-        int randNum = getRandomNumber(min, max);
-        cout << randNum << endl;
-        int arrInt[10] = {};
-        arrInt[0] = randNum;
-        for (int a = 0; a <= 10; ++a) {
-            cout << arrInt[a] << endl;
-        }
-cout << arrInt[0] << endl;
-cout << "Продолжить? y or no" << endl;
-char useAnswer;
-cin >> useAnswer;
-if (useAnswer == 'n')
-{
-    break;
-}
-}
-*/
-// Output:
-/*
-2
+int arrSize = sizeof(arr) / sizeof(arr[0]); // Определение текущего размера массива
+cout << ". Size array: " << arrSize << endl;
 */
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // END FILE
