@@ -6,21 +6,23 @@
 
 int main() {
     using namespace std;
-    int count(0); // Считаем кол-во попыток
-    bool exitLoop(false); // Контроль завершения выполнения цикла
+    int count = 0; // Считаем кол-во попыток
+    bool exitLoop = false; // Флаг для контроля завершения выполнения цикла
     while (!exitLoop) {
         cout << "Enter 'e' to exit this loop or any other key to continue: ";
         char sm;
         cin >> sm;
 
         if (sm == 'e') {
-            exitLoop = true;
+            exitLoop = true; // Меняем флаг, чтобы выйти из цикла
         }
         else {
             ++count;
+            // Выводим текущий счёт итераций
             cout << "We've iterated " << count << " times\n";
         }
     }
+    cout << "We've sum iterated " << count + 1 << " times\n";
 
     return 0;
 }
