@@ -10,59 +10,27 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 int getRandomNumber(int min, int max);
 
 int main() {
     using namespace std;
     srand(static_cast<unsigned int>(time(0)));
-    int min = 1;
-    int max = 10;
+    //int min = 1;
+    //int max = 10;
     // Текущее состояние массива
     cout << "Empty array: " << endl;
-    int arr[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    vector<int> arr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (int arrIndex = 0; arrIndex <= 9; ++arrIndex) {
         cout << " : " << arr[arrIndex];
     }
     cout << " " << endl;
     cout << "/---------------------------------------------------------------------/" << endl;
+    int randNum = getRandomNumber(1, 10); // Генерируем случайное число
+    arr.push_back(randNum); // Вставляем число в массив
     // Новое состояние массива
-    unsigned int counter = -1; // Счётчик уникальных чисел
-    int currentNum = 0; // Текущее число
-    int lastNum = 0; // предыдущее число
-    while (counter > 0 || counter <= 10) {
-        int randNum = getRandomNumber(min, max);
-        currentNum = randNum;
-        if (currentNum != lastNum) { // Сравнивает новое число с предыдущим
-            ++counter; // Если уникальное, то счётчик прирастает
-            arr[counter] = currentNum; // Записывает в массив по индексу из счётчика
-            // Показывает новое содержимое массива и проверяет его на заполненность
-            cout << "New value array ";
-            for (int arrIndex = 0; arrIndex <= 9; ++arrIndex) {
-                cout << " : " << arr[arrIndex];
-                // При остижении 10-и элементов в строке происходит перенос на новую строку
-                if ((arrIndex + 1) % 10 == 0) { cout << "\n"; }
-                int result = arr[9];
-                if (result != 0) { // Если последний элемент массива не равен 0
-                    cout << "\n";
-                    cout << "End value array ";
-                    for (int arrIndex = 0; arrIndex <= 9; ++arrIndex) { // Снова показываем содердимое всего массива
-                        cout << " : " << arr[arrIndex];
-                        cout << " ";
-                        // При остижении 10-и элементов в строке происходит перенос на новую строку
-                        if ((arrIndex + 1) % 10 == 0) { cout << "\n"; }
-                    }
-                    cout << " " << endl;
-                    return 0; // Закрываем программу
-                }
-            }
-            lastNum = currentNum;
-        }
-        else {
-            cout << "\nRepeat! " << "Current num: " << currentNum << " Last num: " << lastNum << endl;
-        }
-        lastNum = currentNum;
-    }
+
     return 0;
 }
 
