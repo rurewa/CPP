@@ -1,29 +1,46 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Пример ввода определённого количества чисел,
-// вычисления суммы их значений в
-// простом массиве.
+// вычисления суммы их значений в векторе
 // V 1.0
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
-using namespace std;
-
-int sum = 0;
+#include <vector>
 
 int main() {
-  int arr[5];
+  using namespace std;
+  static int sum = 0;
+  vector<int> arr;
   // Для ввода числа от пользователя
   for (int x = 0; x <= 4; ++x) {
     cout << "Enter num: " << endl;
-    cin >> arr[x];
+    int userNum;
+    cin >> userNum;
+    arr.push_back(userNum); // Добавляем в массив числа пользователя
   }
-  // Для вычесления суммы
-  for (int i = 0; i <= 4 ; ++i) {
+  int arrSize = arr.size();
+  // Для вычесления суммы всех элементов массива
+  for (int i = 0; i <= arrSize; ++i) {
+    cout << arr[i] << " ";
     sum += arr[i];
   }
   cout << sum << endl;
 
-	return 0;
+  return 0;
 }
+// Output:
+/*
+Enter num: 
+1
+Enter num: 
+2
+Enter num: 
+3
+Enter num: 
+4
+Enter num: 
+5
+1 2 3 4 5 0 15
+*/
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // END FILE
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
