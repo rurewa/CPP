@@ -1,6 +1,6 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 // Варианты доступа к элементам перечислений enum
-// V 1.0
+// V 1.1 (fix)
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=//
 #include <iostream>
 using namespace std;
@@ -13,12 +13,12 @@ enum class Colors {
 };
 
 int main() {
-    Colors colorOrange = ORANGE;
-    cout << "Colors color = ORANGE: " << colorOrange << endl;
-    Colors colorWhite(WHITE);
-    cout << "Colors colorWhite(WHITE): " << colorWhite << endl;
-    int colorGreen = GREEN;
-    cout << "int colorGreen = GREEN: " << colorGreen << endl;
+    Colors colorOrange = Colors::ORANGE;
+    cout << "Color = ORANGE: " << static_cast<int>(colorOrange) << endl;
+    Colors colorWhite(Colors::WHITE);
+    cout << "Color = WHITE: " << static_cast<int>(colorWhite) << endl;
+    Colors colorGreen = Colors::GREEN;
+    cout << "Color = GREEN: " << static_cast<int>(colorGreen) << endl;
     return 0;
 }
 
